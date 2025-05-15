@@ -8,7 +8,7 @@ Bu repository, modern Android geliştirme alanında kendini geliştirmek isteyen
 
 |Ünite|✅  |          Konu Başlığı          | Döküman Sayısı  | Proje Sayısı | Tahmini Süre |Başarım Rozeti |
 |:---:|:-----|:------------------------------:|:-----------------:|:--------------:|:--------------:|:-------------:|
-|0|✅     | [Kullanışlı Kaynaklar](https://github.com/serkanalc/Android-Basics-with-Compose-TR/tree/main/Part%2001%20-%20Kotlin'le%20Programlamaya%20Giri%C5%9F)       |Serkan Alc                |0 Proje              | 4 Saat             | <img src="https://developers.google.com/profile/badges/events/io/2022/android/3-build/badge.svg" width="135em"/> 
+|0|✅     | [Kullanışlı Kaynaklar](https://github.com/Developer-MultiGroup/Android-Blast-Off/tree/main/Part%2000%20%7C%20Kaynak%C3%A7a)       |Serkan Alc                |0 Proje              | 4 Saat             | <img src="https://developers.google.com/profile/badges/events/io/2022/android/3-build/badge.svg" width="135em"/> 
 |1|✅     | [Kotlin ile Modern Programlama Temelleri](https://www.youtube.com/watch?v=ON-jPJLeQxw)       |Emre Özcan               |1 Task              | 2 Saat             | <img src="https://developers.google.com/profile/badges/events/io/2022/android/3-build/badge.svg" width="135em"/>  
 
 <img align="right" src="https://media.giphy.com/media/fWpU2nQmUKvRct4c1u/giphy.gif" width='250'/>

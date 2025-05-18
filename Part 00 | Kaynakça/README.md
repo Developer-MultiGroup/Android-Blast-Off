@@ -11,4 +11,4 @@
 
 ## ⭐ Süreç Bilgilendirme Dokümanları
 
-⭐ [Sertifikasyon süreci bilgilendirme dokümanı](https://github.com/Developer-MultiGroup/Android-Blast-Off/tree/main/Part%2000%20%7C%20Kaynak%C3%A7a/Sertifikasyon%20Gereksinimleri) : [-Serkan Alc](https://x.com/Aserkanalc)
+⭐ [Sertifikasyon süreci bilgilendirme dokümanı](https://github.com/Developer-MultiGroup/Android-Blast-Off/tree/main/Part%2000%20%7C%20Kaynak%C3%A7a/Sertifikasyon%20Gereksinimleri) : -Serkan Alc

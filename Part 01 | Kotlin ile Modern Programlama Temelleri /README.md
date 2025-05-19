@@ -1,5 +1,7 @@
 # Kotlin ile Modertn Programlama Temelleri
 
+![Gemini API by Google Course (27)](https://github.com/user-attachments/assets/101cee44-7862-4c78-9627-c170805687e8)
+
 ### Bu bölümde sizi bekleyen konu başlıkları:
 
 - [1. Kotlin’e Giriş](#1) | [2. Değişkenler](#2) | [3. Veri Tipleri](#3) | [4. Koşullar yapıları](#4) | [5. Koleksiyonlar](#5) | [6. Döngüler](#6) | [7. Fonksiyonlar](#7) | [8. Nesne Yönelimli Programlama](#8) | [9.Encapsulation](#9) | [10. Inheritance (Kalıtım)](#10) | [11. Polymorphism](#11) | [12. Abstraction](#12) | [13. Data Class](#13) | [14. Enum Class](#14) | [15. Sealed Class](#15) | [16. Null Safety](#16) | [17. Scope Functions](#17) | [18. Lambda Fonksiyonları](#18)| [19. Extension Functions](#19) | [Kendini Test Et](https://github.com/Developer-MultiGroup/Android-Blast-Off/tree/main/Part%2001%20%7C%20Kotlin%20ile%20Modern%20Programlama%20Temelleri%20/Proje%20%C3%96devi)

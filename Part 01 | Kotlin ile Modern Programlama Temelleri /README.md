@@ -6,7 +6,7 @@
 - [2. Değişkenler](#2)
 - [3. Veri Tipleri](#3)
 - [4. Koşullar yapıları](#4)
-- [5. Koleksiyonlar(#5)
+- [5. Koleksiyonlar](#5)
 - [6. Döngüler](#6)
 - [7. Fonksiyonlar](#7)
 - [8. Nesne Yönelimli Programlama](#8)

@@ -449,7 +449,393 @@ println(Durum.BASARILI.mesajVer())  // Durum: İşlem başarılı
 - Kodun daha anlaşılır ve bakımı kolay hale gelmesini sağlamak.
 - `when` gibi kontrol yapılarını enum sabitleriyle temiz şekilde kullanabilmek.
 
-## <a name="11"></a> ✅ 15.
+## <a name="15"></a> ✅ 15. Sealed Class (Kapalı Sınıf)
+
+Sealed class, kapalı sınıf hiyerarşisi tanımlamak için kullanılır. Özellikle `when` ifadeleriyle birlikte kullanıldığında, tüm olası durumların kontrol edilmesini sağlar. Bu sayede programda eksik durum kontrolü yapılmasının önüne geçilir ve kod güvenliği artırılır.
+
+### Özellikleri:
+- Sealed class’lar abstract (soyut) sınıflardır ancak sınıfın dışından miras alınamaz.
+- Tüm alt sınıflar aynı dosya içinde tanımlanmak zorundadır. Bu sayede alt sınıfların listesi derleme zamanında bellidir.
+- `when` ifadesinde sealed class kullanıldığında, tüm alt sınıflar kontrol edilirse `else` bloğuna gerek kalmaz.
+- Fonksiyonlar ve özellikler sealed class içinde tanımlanabilir.
+
+### Kullanım Örneği:
+
+```kotlin
+sealed class Result
+
+class Success(val data: String) : Result()
+class Error(val exception: Exception) : Result()
+class Loading : Result()
+
+fun handleResult(result: Result) {
+    when(result) {
+        is Success -> println("Başarılı: ${result.data}")
+        is Error -> println("Hata: ${result.exception.message}")
+        is Loading -> println("Yükleniyor...")
+        // else gerekmez çünkü tüm alt sınıflar kontrol edildi
+    }
+}
+```
+### Neden Sealed Class Kullanılır?
+- Kodda durum yönetimini daha güvenli ve kontrol edilebilir hale getirir.
+- Tüm olası durumların `when` ifadelerinde eksiksiz kontrol edilmesini sağlar.
+- Özellikle durum makineleri, sonuç tipleri veya farklı durumları olan modeller için idealdir.
+- Alt sınıfların bilinçli olarak sınırlanmasını sağlar, bu da hataları azaltır.
+
+## <a name="16"></a> ✅ 16. Null Safety (Null Güvenliği)
+
+Kotlin'in en önemli özelliklerinden biri **null safety** yani null güvenliğidir. Null referanslar (null pointer exception) birçok programlama dilinde sıkça karşılaşılan ve programın çökmesine sebep olan bir hatadır. Kotlin, bu tür hataları önlemek için dil seviyesinde null güvenliği sağlar.
+
+### Null Safety’nin Temel Prensipleri:
+- **Normal değişkenler null değer alamaz:**  
+  Varsayılan olarak, Kotlin’de bir değişken null değer alamaz. Örneğin:
+  
+```kotlin
+  var isim: String = "Ali"
+  // isim = null  // Hata verir
+```
+Null alabilen değişkenler için '?' kullanılır:
+- Eğer bir değişken null olabiliyorsa, tipin sonuna `?` eklenir.
+
+```kotlin
+var soyisim: String? = "Yılmaz"
+soyisim = null  // Geçerli
+```
+### Null Kontrolü Yapmanın Yolları:
+- If kontrolü ile null kontrolü:
+
+```kotlin
+if (soyisim != null) {
+    println(soyisim.length)
+} else {
+    println("Soyisim null")
+}
+```
+- Safe Call Operator (`?.`):
+Null olabilecek değişken üzerinde işlem yaparken, ?. operatörü kullanılır. Eğer değişken null ise işlem yapılmaz ve sonuç null döner.
+
+```kotlin
+println(soyisim?.length)  // soyisim null ise null döner, null değilse length döner
+```
+- Elvis Operatörü (`?:`):
+Null olan değere alternatif bir değer atanmasını sağlar.
+
+```kotlin
+val uzunluk = soyisim?.length ?: 0
+println(uzunluk)  // soyisim null ise 0, değilse length değeri
+```
+- Non-null assertion operator (`!!`):
+Bir değişkenin kesin null olmadığını bildiğimizde kullanılır. Ancak eğer değişken gerçekten null ise NullPointerException atılır.
+
+```kotlin
+println(soyisim!!.length)  // soyisim null ise hata verir
+```
+
+Neden Null Safety Kullanılır?
+
+- Null kaynaklı hataların önüne geçmek için.
+- Daha güvenli ve hatasız kod yazmak için.
+- Kodun okunabilirliğini artırmak ve null kontrollerini standartlaştırmak için.
+
+```kotlin
+fun yazdir(metin: String?) {
+    // Safe call ve Elvis operatörü ile null kontrolü
+    val uzunluk = metin?.length ?: 0
+    println("Metnin uzunluğu: $uzunluk")
+}
+
+fun main() {
+    val mesaj: String? = null
+    yazdir(mesaj)  // Çıktı: Metnin uzunluğu: 0
+
+    val digerMesaj: String? = "Kotlin"
+    yazdir(digerMesaj)  // Çıktı: Metnin uzunluğu: 6
+}
+```
+
+## <a name="17"></a> ✅ 17. Scope Functions (let, apply, run, also, with)
+
+Kotlin'de **Scope Functions**, bir obje üzerinde belirli işlemler yaparken kodu daha okunabilir ve kısa yazmamızı sağlar. Bu fonksiyonlar, bir nesnenin bağlamı (scope) içinde çalışır ve genellikle değişkenlerin tekrar tekrar yazılmasını önler.
+
+Kotlin'de 5 tane yaygın scope function vardır:
+- **let**
+- **apply**
+- **run**
+- **also**
+- **with**
+
+
+
+#### Ortak Özellikleri:
+- Nesneye bir lambda bloğu içinde erişim sağlarlar.
+- Kodun daha akıcı ve temiz yazılmasına yardımcı olur.
+- Her birinin farklı kullanımları ve döndürdüğü değerler vardır.
+
+
+
+### 1. let
+- Nesneyi lambda içinde `it` olarak kullanır.
+- Lambda sonucu döner.
+- Null kontrolü için sık kullanılır.
+
+**Kullanım:**
+
+```kotlin
+val isim: String? = "Ahmet"
+isim?.let {
+    println("İsmin uzunluğu: ${it.length}")
+}
+```
+Burada `isim` null değilse lambda bloğu çalışır, null ise çalışmaz.
+
+### 2. apply
+- Nesneyi lambda içinde **this** ile kullanır.
+- Nesnenin kendisini döner.
+- Nesne üzerinde özellik ayarlamak için uygundur.
+
+**Kullanım:**
+
+```kotlin
+val araba = Araba().apply {
+    marka = "Toyota"
+    model = 2020
+}
+println(araba.marka)  // Toyota
+```
+
+### 3. run
+- Nesneyi lambda içinde **this** ile kullanır.
+- Lambda sonucu döner.
+- Nesne üzerinde işlem yapıp bir sonuç elde etmek için kullanılır.
+
+**Kullanım:**
+
+```kotlin
+val sonuc = "Kotlin".run {
+    length + 10
+}
+println(sonuc)  // 16
+```
+
+### 4. also
+- Nesneyi lambda içinde **it** olarak kullanır.
+- Nesnenin kendisini döner.
+- Nesne üzerinde ek işlemler yaparken (örneğin loglama) kullanılır.
+
+**Kullanım:**
+
+```kotlin
+val liste = mutableListOf("A", "B").also {
+    println("Liste eleman sayısı: ${it.size}")
+}
+```
+
+
+### 5. with
+- Nesne parametre olarak verilir.
+- Lambda içinde **this** olarak kullanılır.
+- Lambda sonucu döner.
+- Nesneye bağlı işlemler için kullanılır, ancak çağrıldığı nesne ile değil, parametre olarak nesneyle çalışır.
+
+**Kullanım:**
+
+```kotlin
+val sonuc = with("Merhaba") {
+    println(this.length)
+    this.uppercase()
+}
+println(sonuc)  // MERHABA
+```
+### Hangi Scope Function Ne Zaman Kullanılır?
+
+| Fonksiyon | this veya it? | Dönen Değer | Kullanım Amacı                              |
+|-----------|---------------|-------------|--------------------------------------------|
+| let       | it            | Lambda sonucu | Null kontrolü ve zincirleme işlemler       |
+| apply     | this          | Nesne       | Nesne özelliklerini ayarlamak               |
+| run       | this          | Lambda sonucu | Nesne üzerinde işlem yapıp sonuç almak     |
+| also      | it            | Nesne       | Nesne üzerinde yan etkiler (loglama gibi)  |
+| with      | this          | Lambda sonucu | Nesne ile işlem yapıp sonuç almak (parametre olarak nesne alır) |
+
+### Özet
+Scope functions, Kotlin kodunu daha okunabilir, kısa ve etkili hale getirmek için güçlü araçlardır. Doğru kullanıldığında kod kalitesini ve bakımını kolaylaştırırlar.
+
+## <a name="18"></a> ✅ 18. Lambda Fonksiyonları
+
+Kotlin, fonksiyonel programlama paradigmalarını destekler ve **lambda ifadeleri** sayesinde fonksiyonlar, diğer değişkenler gibi kullanılabilir. Lambda, adı olmayan, kısa ve genellikle tek seferlik kullanılan fonksiyonlardır.
+
+#### Lambda Fonksiyonu Nedir?
+
+Bir lambda fonksiyonu, parametreleri ve işlemleri süslü parantez `{}` içinde tanımlanan anonim (isimsiz) bir fonksiyondur.
+
+Örnek bir lambda fonksiyonu:
+
+```kotlin
+val topla = { a: Int, b: Int -> a + b }
+println(topla(3, 4)) // 7
+```
+Burada `topla` adında bir değişken var ve kendisi aslında iki parametre alan ve bu parametrelerin toplamını döndüren bir fonksiyon.
+
+Lambda İfadelerinin Yapısı:
+
+```kotlin
+{ parametreler -> fonksiyonun gövdesi }
+```
+- Parametreler opsiyoneldir (parametresiz de olabilir).
+- `->` işareti parametreler ile fonksiyon gövdesini ayırır.
+- `it` anahtar kelimesi, tek parametreli lambdalarda o parametreyi ifade eder.
+
+#### Örnekler
+1. Liste Elemanlarının Karesi
+
+```kotlin
+val sayilar = listOf(1, 2, 3, 4)
+val kareler = sayilar.map { it * it }
+println(kareler)  // [1, 4, 9, 16]
+```
+- `map` fonksiyonu, listenin her elemanına lambda fonksiyonunu uygular ve yeni bir liste döner.
+- `it`, liste elemanını temsil eder.
+
+2. Liste Elemanlarını Yazdırma
+
+```kotlin
+sayilar.forEach { println(it) }
+```
+- `forEach` fonksiyonu, listenin her elemanını sırayla lambda fonksiyonuna gönderir.
+- Burada, her eleman `println` ile yazdırılır.
+
+### Lambda Kullanımının Avantajları
+
+- Kısa ve okunabilir kod: Tek seferlik fonksiyonlar için ayrı fonksiyon yazmaya gerek kalmaz.
+- Fonksiyonlar değişken olarak atanabilir ve parametre olarak geçebilir.
+- Yüksek seviye fonksiyonlarla (map, filter, reduce vb.) birlikte kullanıldığında fonksiyonel ve etkili kod yazmayı sağlar.
+
+### Daha Detaylı Örnekler
+
+#### 2 parametreli lambda:
+```kotlin
+val topla = { x: Int, y: Int -> x + y }
+println(topla(5, 7))  // 12
+```
+#### Parametresiz lambda:
+```kotlin
+val selamla = { println("Merhaba Kotlin!") }
+selamla()  // Merhaba Kotlin!
+```
+#### Liste filtreleme:
+```kotlin
+val ciftSayilar = sayilar.filter { it % 2 == 0 }
+println(ciftSayilar)  // [2, 4]
+```
+#### `it` Anahtar Kelimesi
+Eğer lambda tek parametre alıyorsa, parametre adı belirtilmezse otomatik olarak `it` kullanılır:
+
+```kotlin
+val kup = { x: Int -> x * x * x }
+val kup2 = { it: Int -> it * it * it }  // Aynı şey
+```
+### Özet
+
+- **Lambda fonksiyonları**, Kotlin’de fonksiyonel programlamanın yapı taşıdır.  
+- Fonksiyonları **değişken gibi kullanmaya** ve **başka fonksiyonlara parametre olarak vermeye** olanak sağlar.  
+- `map`, `filter`, `forEach` gibi **koleksiyon fonksiyonlarıyla çok sık** kullanılır.  
+- **Kısa ve okunabilir** kod yazımı sağlar.
+
+## <a name="19"></a> ✅ 19. Extension Functions
+
+Kotlin’in güçlü özelliklerinden biri olan **extension functions** (genişletme fonksiyonları), mevcut bir sınıfa **kaynak koduna erişmeden** yeni fonksiyonlar eklememizi sağlar.  
+Bu sayede var olan sınıflara daha okunabilir ve kullanışlı özellikler kazandırabiliriz.
+
+
+### Extension Function Nedir?
+
+**Extension function**, bir sınıfa sonradan yeni bir fonksiyon yazıyormuşsun gibi görünmesini sağlar.  
+Bu fonksiyonlar, aslında sınıfın içinde değilmiş gibi davranır ama o sınıfın nesneleri tarafından çağrılabilir.
+
+```kotlin
+fun String.bosluguSil(): String {
+    return this.replace(" ", "")
+}
+
+val metin = "Merhaba Kotlin"
+println(metin.bosluguSil()) // "MerhabaKotlin"
+```
+Yukarıda `String` sınıfına `bosluguSil` adında yeni bir fonksiyon eklendi. Orijinal `String` sınıfına müdahale etmeden bunu gerçekleştirebildik.
+
+### Kullanım Amacı
+-Kütüphane sınıflarını özelleştirmek (örneğin `String`, `List`, `Int` gibi).
+-Kod tekrarını azaltmak.
+-Daha okunabilir ve anlamlı API'ler oluşturmak.
+-Framework'lerde DSL (Domain Specific Language) yapıları kurmak.
+
+Syntax:
+```kotlin
+fun SınıfAdi.fonksiyonAdi(parametreler): DönüşTipi {
+    // this -> sınıf örneği
+    ...
+}
+```
+- `this anahtar kelimesi, uzattığımız sınıfın örneğini temsil eder.
+
+### Örnekler
+
+1. Int sınıfına karesini alma fonksiyonu ekleyelim:
+
+```kotlin
+fun Int.kare(): Int {
+    return this * this
+}
+
+val sayi = 5
+println(sayi.kare()) // 25
+```
+2. List içeriğini yazdıran bir extension:
+
+```kotlin
+fun <T> List<T>.yazdir() {
+    for (eleman in this) {
+        println(eleman)
+    }
+}
+
+val isimler = listOf("Ali", "Ayşe", "Can")
+isimler.yazdir()
+// Ali
+// Ayşe
+// Can
+```
+
+3. Boolean extension örneği:
+
+```kotlin
+fun Boolean.evetsiYap(): String {
+    return if (this) "Evet" else "Hayır"
+}
+
+val karar = true
+println(karar.evetsiYap())  // Evet
+```
+### Önemli Notlar
+
+- Extension fonksiyonlar gerçek anlamda sınıfın içine eklenmez; derleyici bunu arka planda bir yardımcı fonksiyon gibi ele alır.
+- Bu nedenle, `private` veya `protected` üyelere doğrudan erişemez.
+- Eğer aynı isimde bir fonksiyon hem sınıfın içinde hem extension olarak varsa, sınıfın içindeki tercih edilir.
+
+---
+
+### Özet
+
+- **Extension functions**, bir sınıfı yeniden yazmadan veya miras almadan, o sınıfa yeni fonksiyonlar eklemeye olanak sağlar.
+- Kodunuzu daha **modüler**, **okunabilir** ve **yeniden kullanılabilir** hale getirir.
+- Kotlin DSL'lerinin ve modern API tasarımlarının **temel araçlarından biridir**.
+
+
+
+
+
+
+
+
 
 
 

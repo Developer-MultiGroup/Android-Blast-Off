@@ -1,7 +1,28 @@
 # Kotlin ile Modertn Programlama Temelleri
 
 
-## ✅ 1. Kotlin’e Giriş
+
+- [1. Kotlin’e Giriş](#1)
+- [2. Değişkenler](#2)
+- [3. Veri Tipleri](#3)
+- [4. Koşullar yapıları](#4)
+- [5. Koleksiyonlar(#5)
+- [6. Döngüler](#6)
+- [7. Fonksiyonlar](#7)
+- [8. Nesne Yönelimli Programlama](#8)
+- [9.Encapsulation](#9)
+- [10. Inheritance (Kalıtım)](#10)
+- [11. Polymorphism](#11)
+- [12. Abstraction](#12)
+- [13. Data Class](#13)
+- [14. Enum Class](#14)
+- [15. Sealed Class](#15)
+- [16. Null Safety](#16)
+- [17. Scope Functions](#17)
+- [18. Lambda Fonksiyonları](#18)
+- [19. Extension Functions](#19)
+
+## <a name="1"></a> ✅ 1. Kotlin’e Giriş
 
 Kotlin, JVM üzerinde çalışan, modern, açık kaynaklı ve statik tipli bir programlama dilidir. Java ile birlikte çalışabilir (interoperable) ve özellikle Android geliştirme için tercih edilir. Temiz sözdizimi, fonksiyonel özellikleri ve null güvenliği gibi avantajları ile öne çıkar.
 
@@ -12,7 +33,7 @@ fun main() {
 
 ```
 
-## ✅ 2. Değişkenler – val, var, lateinit
+## <a name="2"></a> ✅ 2. Değişkenler – val, var, lateinit
 
 Kotlin'de iki tür değişken tanımlanır:
 
@@ -32,7 +53,7 @@ fun ata() {
 }
 ```
 
-## ✅ 3. Primitive Veri Tipleri
+## <a name="3"></a> ✅ 3. Veri Tipleri
 
 Kotlin'de yaygın olarak kullanılan temel veri tipleri şunlardır:
 
@@ -44,7 +65,8 @@ val mantiksal: Boolean = true
 val metin: String = "Merhaba"
 ```
 
-## ✅ 4. Koşullar – if, else, when
+
+## <a name="4"></a> ✅ 4. Koşullar yapıları – if, else, when
 
 Koşul ifadeleri, program akışında karar vermek için kullanılır. Belirli bir koşul doğruysa bir kod bloğu çalıştırılır, yanlışsa başka bir kod bloğu çalıştırılabilir.
 
@@ -94,7 +116,8 @@ val sonuc = when {
 
 Bu kullanımda `when` herhangi bir değişkenle kısıtlanmaz, sırayla her koşul değerlendirilir ve doğru olanın bloğu çalışır.
 
-## ✅ 5. Koleksiyonlar – List, Set, Map
+
+## <a name="5"></a> ✅ 5. Koleksiyonlar – List, Set, Map
 
 Kotlin’de verileri gruplamak için kullanılan koleksiyonlar immutable ve mutable olarak ikiye ayrılır.
 
@@ -115,7 +138,8 @@ val set = setOf(1, 2, 3)  // Benzersiz elemanlar
 val map = mapOf("ad" to "Ali", "yas" to 25)  // Anahtar-değer çifti
 
 ```
-## ✅ 6. Döngüler
+
+## <a name="6"></a> ✅ 6. Döngüler
 
 Döngüler, belirli bir işlemi tekrar etmek için kullanılır. Kotlin’de en sık kullanılan döngü türleri:
 
@@ -143,7 +167,7 @@ while (x > 0) {
 
 *`1..3` ifadesi 1’den 3’e kadar (3 dahil) sayılar anlamına gelir.*
 
-## ✅ 7. Fonksiyonlar
+## <a name="7"></a> ✅ 7. Fonksiyonlar
 
 Fonksiyonlar, belirli işleri yapan kod bloklarıdır ve yeniden kullanılabilirliği sağlar.
 
@@ -166,7 +190,7 @@ fun topla(a: Int, b: Int): Int {
 fun kare(x: Int) = x * x
 ```
 
-## ✅ 8. Nesne Yönelimli Programlama (OOP)
+## <a name="8"></a> ✅ 8. Nesne Yönelimli Programlama (OOP)
 
 Nesne Yönelimli Programlama, gerçek dünyadaki nesneleri ve ilişkilerini modelleyerek programlama yapmayı sağlar. Kotlin’de OOP, sınıflar (classes), nesneler (objects), özellikler (properties) ve fonksiyonlar (methods) üzerinden gerçekleştirilir.
 
@@ -203,7 +227,7 @@ println(araba.bilgi())  // Çıktı: Honda 2022
 
 OOP sayesinde programlar daha düzenli, okunabilir ve yönetilebilir olur. Ayrıca kod tekrarını azaltır ve büyük projelerde kolay bakım sağlar.
 
-## 9. ✅ Encapsulation (Kapsülleme)
+## <a name="9"></a> ✅ 9.Encapsulation (Kapsülleme)
 
 Encapsulation, verilerin dış erişime kapatılıp kontrollü erişim sağlanmasıdır. Bu sayede sınıfın iç durumu korunur.
 
@@ -221,8 +245,7 @@ class Kisi(private var isim: String) {
 ```
 Burada `isim` değişkeni dışarıdan doğrudan erişilemez. `yas` için setter tanımlanmış ve negatif değer ataması engellenmiştir.
 
-
-## ✅ 10. Inheritance (Kalıtım)
+## <a name="10"></a> ✅ 10. Inheritance (Kalıtım)
 
 Kalıtım, bir sınıfın başka bir sınıftan özelliklerini ve davranışlarını devralmasıdır. Bu sayede kod tekrarını azaltır ve sınıflar arasında hiyerarşik ilişkiler kurulabilir.
 
@@ -270,6 +293,7 @@ sesiCal(h)  // Çıktı: Miyav
 - Ortak özellikler ve davranışlar süper sınıfta toplanır.
 - Alt sınıflar kendi özelliklerini ve davranışlarını ekleyerek esnek yapı oluşturur.
 - Büyük projelerde daha modüler ve sürdürülebilir kod yazmayı sağlar.
+
 
 
 ## <a name="11"></a> ✅ 11. Polymorphism (Çok Biçimlilik)
@@ -320,7 +344,7 @@ Polymorphism’in Avantajları
 
 Polymorphism, büyük ve karmaşık projelerde kodun daha esnek, anlaşılır ve sürdürülebilir olmasını sağlar.
 
-## <a name="11"></a> ✅ 12. Abstraction (Soyutlama)
+## <a name="12"></a> ✅ 12. Abstraction (Soyutlama)
 
 Soyutlama, nesne yönelimli programlamanın temel prensiplerinden biridir ve karmaşık sistemlerde gereksiz detayları gizleyip, sadece önemli ve temel özelliklerin görünmesini sağlar. Böylece kullanıcılar veya diğer sınıflar, sadece gerekli işlevlerle ilgilenir ve detaylara müdahale etmek zorunda kalmazlar.
 
@@ -364,7 +388,7 @@ Abstraction Kullanmanın Avantajları:
 Abstraction sayesinde, farklı türlerde nesneler ortak bir temel üzerinden yönetilebilir ve karmaşık uygulamalar daha yönetilebilir hale gelir.
 
 
-## <a name="11"></a> ✅ 13. Data Class (Veri Sınıfı)
+## <a name="13"></a> ✅ 13. Data Class (Veri Sınıfı)
 
 Kotlin'de `data class` veri tutmak için kullanılan özel bir sınıf türüdür. Data class'lar, veri odaklı nesneler oluşturmayı kolaylaştırır ve otomatik olarak bazı faydalı fonksiyonları sağlar.
 
@@ -408,7 +432,7 @@ println("İsim: $isim, Yaş: $yas")
 ### Özet
 Data class, sadece veri tutan sınıflar için hızlı ve kullanışlı bir çözümdür. Modelleme, veri transferi veya basit veri yapıları oluşturmak için tercih edilir.
 
-## <a name="11"></a> ✅ 14. Enum Class (Sabit Değerler Sınıfı)
+## <a name="14"></a> ✅ 14. Enum Class (Sabit Değerler Sınıfı)
 
 Enum class, sabit değerlerin bir arada tutulduğu özel bir sınıf türüdür. Program içerisinde belirli ve sınırlı sayıda seçenek olduğunda enum kullanmak, kodun okunabilirliğini artırır ve hata yapma riskini azaltır.
 

@@ -11,10 +11,10 @@
 
 ## 👥 Profiller, Bloglar ve Youtube Kanalları
 
-👥 [JetBrains Youtube Kanalı](https://www.youtube.com/@JetBrainsTV) <br>
-👥 [Android Devs Youtube Kanalı](https://www.youtube.com/@AndroidDevelopers) <br>
-👥 [Philipp Lackner Youtube Kanalı](https://www.youtube.com/@PhilippLackner) <br>
-👥 [Fireship Youtube Kanalı](https://www.youtube.com/@Fireship) <br>
+👥 [JetBrains Youtube Kanalı](https://www.youtube.com/@JetBrainsTV): Official Jetbrains içerik ve yenilik paylaşım youtube kanalı <br>
+👥 [Android Devs Youtube Kanalı](https://www.youtube.com/@AndroidDevelopers): Official Google Android içerik ve yenilik paylaşım youtube kanalı <br>
+👥 [Philipp Lackner Youtube Kanalı](https://www.youtube.com/@PhilippLackner): Farklı mobil alanlarad aktif video paylaşımı yapan Philipp Lackner'ın youtube kanalı  <br>
+👥 [Fireship Youtube Kanalı](https://www.youtube.com/@Fireship): Farklı alanlarda kısa, düzenlenmiş ve kurgulu içeriklerin bulunduğu harika youtube kanalı <br>
 
 
 

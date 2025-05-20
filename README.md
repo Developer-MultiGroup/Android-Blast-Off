@@ -21,3 +21,14 @@ Eğer size bir faydası dokunduğunu düşünüyorsanız bu repoyu starlayarak s
 <br>
 Bu repo gönüllülük esaslı geliştirilmiştir, dolayısıyla bir şey eksikse veya düzeltilmesi gerekiyorsa lütfen bana ulaşarak bunu bildirin ve en kısa sürede düzenlememe katkıda bulunmuş olun 👍🏻
 
+## ❤️ Destekleyenler
+
+Bu proje, katkı sağlayan Community Supporterlar sayesinde oluşturuldu, sen deonlardan biri olmaya ne dersin:
+
+<a href="https://kommunity.com/devmultigroup/events/android-blast-off-jetpack-compose-bootcamp-18857d79" target="_blank">
+  <img src="https://github.com/user-attachments/assets/dc6ba407-ac5f-4df9-9f66-e39105c7b1d0" width="120" alt="Kommunity">
+</a>
+<a href="https://buymeacoffee.com/multigroup" target="_blank">
+  <img src="https://github.com/user-attachments/assets/6a228983-c855-4828-803a-10058f0e3fd7" width="120" alt="Buymecoffee">
+</a>
+

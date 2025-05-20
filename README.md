@@ -15,14 +15,15 @@ Bu repository, modern Android geliştirme alanında kendini geliştirmek isteyen
 
 <table>
   <tr>
-    <td style="width:66%; vertical-align:middle; text-align:center;">
-      <h2>⭐ Bu Repoyu Faydalı Buldunuz Mu ?</h2>
+    <td style="width:60%; vertical-align:middle; text-align:center;">
+      <h2>⭐️ Bu Repoyu Yararlı buldunuz Mu?</h2>
+      <br>
       <p>
         Eğer size bir faydası dokunduğunu düşünüyorsanız bu repoyu starlayarak siz de [Stargazer](url)'ların arasına katılıp beni buna benzer kaynak paylaşımları yapmaya motive edebilirsiniz.⭐ <br>
 <br>
 Bu repo gönüllülük esaslı geliştirilmiştir, dolayısıyla bir şey eksikse veya düzeltilmesi gerekiyorsa lütfen bana ulaşarak bunu bildirin ve en kısa sürede düzenlememe katkıda bulunmuş olun 👍🏻      </p>
     </td>
-    <td style="width:33%; text-align:center;">
+    <td style="width:40%; text-align:center;">
       <img src="https://media.giphy.com/media/fWpU2nQmUKvRct4c1u/giphy.gif" alt="demo" style="max-width:100%;">
     </td>
   </tr>

@@ -22,15 +22,15 @@
 
 ⭐ [Sertifikasyon süreci bilgilendirme dokümanı](https://github.com/Developer-MultiGroup/Android-Blast-Off/tree/main/Part%2000%20%7C%20Kaynak%C3%A7a/Sertifikasyon%20Gereksinimleri) : -Serkan Alc <br>
 
-## ✅ Kotlin ile Modern Programlama Temelleri:
+## ✅ Oturum 01: Kotlin ile Modern Programlama Temelleri:
 
 👥 [JetBrains Youtube Kanalı](https://www.youtube.com/@JetBrainsTV): Official Jetbrains içerik ve yenilik paylaşım youtube kanalı <br>
 📄 [Android’in Kotlin öncelikli yaklaşımı](https://developer.android.com/kotlin/first?hl=tr) : Neden java yerine kotlin öğrenmeliyim, Google'ın cevabı <br>
 
 
-## ✅ Jetpack Compose Nedir? Temel Bilgilerle Hızlı Başlangıç
+## ✅ Oturum 02: Jetpack Compose Nedir? Temel Bilgilerle Hızlı Başlangıç
 
-👥 [Murat Yener](https://www.linkedin.com/in/muratyener/)
+👥 [Murat Yener](https://www.linkedin.com/in/muratyener/): Oturum konuğumuz ve eski Google çalışanı Murat Yener'in linkedin hesabı
 
 
 

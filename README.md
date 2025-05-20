@@ -13,13 +13,20 @@ Bu repository, modern Android geliştirme alanında kendini geliştirmek isteyen
 |1|✅     | [Jetpack Compose Nedir? Temel Bilgilerle Hızlı Başlangıç](https://www.youtube.com/watch?v=wku2t4buH10&ab_channel=MultiGroupCommunity)       |[Murat Yener ](https://www.linkedin.com/in/muratyener/)              |1 Task              | 2 Saat             | <img src="https://github.com/user-attachments/assets/cad73ab3-1c48-4249-9cb1-70be8b6c82e9" width="135em"/>  
 |2|✅     | [Jetpack Compose'da State Yönetimi](https://www.youtube.com/watch?v=2zEsctLGkd8)       |[Kaan Enes Kapıcı ](https://www.linkedin.com/in/kaaneneskpc/)              |1 Task              | 2 Saat             | <img src="https://github.com/user-attachments/assets/6ade1a76-94b0-4497-8b4a-a16c23847264" width="135em"/>
 
-<img align="right" src="https://media.giphy.com/media/fWpU2nQmUKvRct4c1u/giphy.gif" width='250'/>
-
-## ⭐ Bu Repoyu Faydalı Buldunuz Mu ?
-
-Eğer size bir faydası dokunduğunu düşünüyorsanız bu repoyu starlayarak siz de [Stargazer](url)'ların arasına katılıp beni buna benzer kaynak paylaşımları yapmaya motive edebilirsiniz.⭐ <br>
+<table>
+  <tr>
+    <td style="width:66%; vertical-align:middle; text-align:center;">
+      <h2>⭐ Bu Repoyu Faydalı Buldunuz Mu ?</h2>
+      <p>
+        Eğer size bir faydası dokunduğunu düşünüyorsanız bu repoyu starlayarak siz de [Stargazer](url)'ların arasına katılıp beni buna benzer kaynak paylaşımları yapmaya motive edebilirsiniz.⭐ <br>
 <br>
-Bu repo gönüllülük esaslı geliştirilmiştir, dolayısıyla bir şey eksikse veya düzeltilmesi gerekiyorsa lütfen bana ulaşarak bunu bildirin ve en kısa sürede düzenlememe katkıda bulunmuş olun 👍🏻
+Bu repo gönüllülük esaslı geliştirilmiştir, dolayısıyla bir şey eksikse veya düzeltilmesi gerekiyorsa lütfen bana ulaşarak bunu bildirin ve en kısa sürede düzenlememe katkıda bulunmuş olun 👍🏻      </p>
+    </td>
+    <td style="width:33%; text-align:center;">
+      <img src="https://media.giphy.com/media/fWpU2nQmUKvRct4c1u/giphy.gif" alt="demo" style="max-width:100%;">
+    </td>
+  </tr>
+</table>
 
 ## ❤️ Destekleyenler
 
@@ -31,4 +38,3 @@ Bu proje, katkı sağlayan Community Supporterlar sayesinde oluşturuldu, sen de
 <a href="https://buymeacoffee.com/multigroup" target="_blank">
   <img src="https://github.com/user-attachments/assets/6a228983-c855-4828-803a-10058f0e3fd7" width="120" alt="Buymecoffee">
 </a>
-

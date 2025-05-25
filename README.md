@@ -1,4 +1,9 @@
-# Android Blast Off Bootcamp TR
+![badge (3)](https://github.com/user-attachments/assets/d6790c5d-2413-4e68-8ada-270e50c14ce6)# Android Blast Off Bootcamp TR
+
+
+
+
+
 
 # 📝 İçerik:
 
@@ -12,6 +17,9 @@ Bu repository, modern Android geliştirme alanında kendini geliştirmek isteyen
 |1|✅     | [Kotlin ile Modern Programlama Temelleri](https://github.com/Developer-MultiGroup/Android-Blast-Off/tree/main/Part%2001%20%7C%20Kotlin%20ile%20Modern%20Programlama%20Temelleri%20)       |[Emre Özcan](https://www.linkedin.com/in/emre-%C3%B6zcan-6aa582193/)               |1 Task              | 2 Saat             | <img src="https://github.com/user-attachments/assets/aa472f1d-8132-436c-b3ad-b5ee132fb510" width="135em"/>
 |1|✅     | [Jetpack Compose Nedir? Temel Bilgilerle Hızlı Başlangıç](https://github.com/Developer-MultiGroup/Android-Blast-Off/tree/main/Part%2002%20%7C%20Jetpack%20Compose%20Nedir%3F%20Temel%20Bilgilerle%20H%C4%B1zl%C4%B1%20Ba%C5%9Flang%C4%B1%C3%A7)       |[Murat Yener ](https://www.linkedin.com/in/muratyener/)              |1 Task              | 2 Saat             | <img src="https://github.com/user-attachments/assets/cad73ab3-1c48-4249-9cb1-70be8b6c82e9" width="135em"/>  
 |2|✅     | [Jetpack Compose'da State Yönetimi](https://github.com/Developer-MultiGroup/Android-Blast-Off/tree/main/Part%2003%20%7C%20Jetpack%20Compose'da%20State%20Y%C3%B6netimi)       |[Kaan Enes Kapıcı ](https://www.linkedin.com/in/kaaneneskpc/)              |1 Task              | 2 Saat             | <img src="https://github.com/user-attachments/assets/6ade1a76-94b0-4497-8b4a-a16c23847264" width="135em"/>
+|2|✅     | [Jetpack Compose Navigation Kullanımı](https://github.com/Developer-MultiGroup/Android-Blast-Off/tree/main/Part%2004%20%7C%20Jetpack%20Compose%20Navigation%20Kullan%C4%B1m%C4%B1%20)       |[Mehmet Niyazi Atlıoğlu](https://www.linkedin.com/in/mnatlioglu/)              |1 Task              | 2 Saat             | <img src="https://github.com/user-attachments/assets/6ade1a76-94b0-4497-8b4a-a16c23847264" width="135em"/>
+
+
 
 <table>
   <tr>
